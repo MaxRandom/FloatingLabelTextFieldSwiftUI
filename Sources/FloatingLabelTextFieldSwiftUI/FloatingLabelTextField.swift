@@ -28,7 +28,7 @@ public struct FloatingLabelTextField: View {
             return TextFieldValidator(condition: false, errorMessage: notifier.requiredFieldMessage)
         }
         
-        if let firstError = notifier.arrValidator.filter({!$0.condition}).first && !isSelected {
+        if let firstError = notifier.arrValidator.filter({!$0.condition}).first, !isSelected {
             return firstError
         }
         return TextFieldValidator(condition: true, errorMessage: "")
